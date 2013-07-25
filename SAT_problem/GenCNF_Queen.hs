@@ -3,7 +3,7 @@ module GenCNF_Queen where
 import Data.List
 
 -- It generates CNF file which taken by zChaff tool.
--- CNF file contains constrains for queen problem as clause norm form
+-- CNF file contains constraints for queen problem as clause norm form
 p2i (x, y) width = width * (x - 1) + y
 
 atLeastOneQueenInEachRow width = 
