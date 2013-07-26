@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<proof format="uprove" formatversion="1">
+<rebuild>
+<conclusion>q</conclusion>
+<premise>p \/ q</premise>
+<premise>~p</premise>
+</rebuild>
+<text completed="false">
+<proofline dependencies="1" justification="Premise" number="1">p \/ q</proofline>
+<proofline dependencies="2" justification="Premise" number="2">~p</proofline>
+</text>
+</proof>

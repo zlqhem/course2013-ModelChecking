@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<proof format="uprove" formatversion="1">
+<rebuild>
+<conclusion>q</conclusion>
+<premise>p \/ q</premise>
+<premise>~p</premise>
+<rule lines="" name="ca.uottawa.nudd049.uprove.logic.rules.Assumption" suggestion="0">p</rule>
+<rule lines="" name="ca.uottawa.nudd049.uprove.logic.rules.Assumption" suggestion="0">~q</rule>
+<rule lines="2,3" name="ca.uottawa.nudd049.uprove.logic.rules.NotElim" suggestion="0"/>
+<rule lines="4,5" name="ca.uottawa.nudd049.uprove.logic.rules.NotIntro" suggestion="0"/>
+<rule lines="6" name="ca.uottawa.nudd049.uprove.logic.rules.DN" suggestion="0"/>
+<rule lines="" name="ca.uottawa.nudd049.uprove.logic.rules.Assumption" suggestion="0">q</rule>
+<rule lines="7" name="ca.uottawa.nudd049.uprove.logic.rules.Copy" suggestion="0"/>
+<rule lines="1,3,7,8,9" name="ca.uottawa.nudd049.uprove.logic.rules.OrElim" suggestion="0"/>
+<rule lines="8" name="ca.uottawa.nudd049.uprove.logic.rules.Copy" suggestion="0"/>
+<rule lines="1,3,7,8,11" name="ca.uottawa.nudd049.uprove.logic.rules.OrElim" suggestion="0"/>
+</rebuild>
+<text completed="true">
+<proofline dependencies="1" justification="Premise" number="1">p \/ q</proofline>
+<proofline dependencies="2" justification="Premise" number="2">~p</proofline>
+<proofline dependencies="3" justification="Assumption" number="3">p</proofline>
+<proofline dependencies="4" justification="Assumption" number="4">~q</proofline>
+<proofline dependencies="2,3" justification="2,3 ~E" number="5">_|_</proofline>
+<proofline dependencies="2,3" justification="4,5 ~I" number="6">~~q</proofline>
+<proofline dependencies="2,3" justification="6 DN" number="7">q</proofline>
+<proofline dependencies="8" justification="Assumption" number="8">q</proofline>
+<proofline dependencies="2,3" justification="7 Copy" number="9">q</proofline>
+<proofline dependencies="1,2,3" justification="1,3,7,8,9 \/E" number="10">q</proofline>
+<proofline dependencies="8" justification="8 Copy" number="11">q</proofline>
+<proofline dependencies="1,2" justification="1,3,7,8,11 \/E" number="12">q</proofline>
+</text>
+</proof>
