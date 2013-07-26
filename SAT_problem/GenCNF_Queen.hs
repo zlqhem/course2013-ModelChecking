@@ -1,5 +1,5 @@
-module Main where
-import System.Environment
+module GenCNF_Queen where
+
 import Data.List
 
 -- It generates CNF file which taken by zChaff tool.
@@ -30,20 +30,15 @@ noMoreThanOneQueenInDiagonal width =
                            x2 >= 1 && x2 <= width,
                            y2 >= 1 && y2 <= width]
 
+noMoreThanOneQueenInDiagonal2 width = 
+      [((x1,y1),(x2,y2)) | x1 <- [1..width], y1 <- [1..width],
+                           n  <- [-width+1..width-1],
+                           x2 <- [x1 + n], y2 <- [y1 + n], 
+                           x1 /= x2, y1 /= y2,
+                           x2 >= 1 && x2 <= width,
+                           y2 >= 1 && y2 <= width]
+
 appendsZero:: String -> String
 appendsZero clause = clause ++ " 0"
 
-main = do
-  args <- getArgs
-  case args of
-    [] -> print "Usage: prob-queen <board-size>"
-    otherwise -> do
-      let width = read (head args) :: Int 
-      let allClauses = foldl (\acc f -> acc ++ f width) []
-                             [atLeastOneQueenInEachRow,
-                              noMoreThanOneQueenInEachRow,
-                              noMoreThanOneQueenInEachColumn,
-                              noMoreThanOneQueenInDiagonal] 
-      putStrLn $ "p cnf " ++ show (width * width) ++ " " ++ show (length allClauses)
-      putStrLn $ intercalate "\n" $ map appendsZero allClauses
 

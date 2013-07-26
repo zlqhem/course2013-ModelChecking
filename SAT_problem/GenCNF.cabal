@@ -15,6 +15,18 @@ build-type:          Simple
 cabal-version:       >=1.8
 
 executable GenCNF
-   main-is:            GenCNF_Queen.hs 
+   main-is:            Main.hs
   -- other-modules:       
   build-depends:       base ==4.5.*
+
+Test-Suite tests
+    Type:               exitcode-stdio-1.0
+    Hs-source-dirs:     tests .
+    Main-is:            Main.hs
+
+    Build-depends:      base >= 4.0
+                    ,   QuickCheck >= 2.4.0.1
+                    ,   test-framework
+                    ,   test-framework-quickcheck2
+    Other-modules:      Properties
+            
