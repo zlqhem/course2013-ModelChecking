@@ -12,7 +12,7 @@ propDiagonal w p1@(x,y) p2@(x2, y2) =
   where constraints = noMoreThanOneQueenInDiagonal2 w
 
 isDiagonal (x,y) (x2, y2) = x /= x2 && (slope == 1 || slope == -1)
-  where slope = (y2-y) `div` (x2-x)
+  where slope = fromIntegral (y2-y) / fromIntegral (x2-x)
 
 inRange w (x,y) = x >= 1 && x <= w &&
                   y >= 1 && y <= w &&
