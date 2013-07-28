@@ -8,7 +8,7 @@ propDiagonal :: Int -> (Int, Int) -> (Int, Int) -> Property
 propDiagonal w p1@(x,y) p2@(x2, y2) =
   isDiagonal p1 p2 ==> 
   inRange w p1 ==> 
-  inRange w p2 ==> elem (p1,p2) constraints
+  inRange w p2 ==> elem (p1,p2) constraints || elem (p2,p1) constraints
   where constraints = noMoreThanOneQueenInDiagonal2 w
 
 isDiagonal (x,y) (x2, y2) = x /= x2 && (slope == 1 || slope == -1)
