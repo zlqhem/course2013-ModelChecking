@@ -25,15 +25,7 @@ noMoreThanOneQueenInDiagonal width =
   map (\(p1,p2) -> show (-1 * (p2i p1 width)) ++ " " ++ show (-1 * (p2i p2 width)))
       [((x1,y1),(x2,y2)) | x1 <- [1..width], y1 <- [1..width],
                            n  <- [-width+1..width-1],
-                           x2 <- [x1 + n], y2 <- [y1 + n], 
-                           x1 /= x2, y1 /= y2,
-                           x2 >= 1 && x2 <= width,
-                           y2 >= 1 && y2 <= width]
-
-noMoreThanOneQueenInDiagonal2 width = 
-      [((x1,y1),(x2,y2)) | x1 <- [1..width], y1 <- [1..width],
-                           n  <- [-width+1..width-1],
-                           x2 <- [x1 + n], y2 <- [y1 + n], 
+                           x2 <- [x1 + n, x1 - n], y2 <- [y1 + n, y1 - n], 
                            x1 /= x2, y1 /= y2,
                            x2 >= 1 && x2 <= width,
                            y2 >= 1 && y2 <= width]
